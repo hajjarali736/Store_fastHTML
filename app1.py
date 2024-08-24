@@ -48,14 +48,15 @@ async def tuple_joke():
     else:
         return(joke["setup"] ,joke["delivery"])
 
-app = FastHTML(live = True)
+app = FastHTML(hdrs=hdrs, default_hdrs=False,live = True)
 
 joke = ()
 
 @app.get("/")
 def home():
-    return navigation_bar(),Title("Joke Generator"),Main(Button("generate joke", hx_post="/genjoke"),
-                                        Div(P(listing(joke))))
+    # return navigation_bar(),Title("Joke Generator"),Main(Button("generate joke", hx_post="/genjoke"),
+    #                                     Div(P(listing(joke))))
+    return Div(Img(src="ghra/x.jpg"))
 
 
 @app.post("/genjoke")
