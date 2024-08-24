@@ -1,4 +1,5 @@
 from fasthtml.common import *
+from inspect import getsource
 from jokeapi import Jokes # Import the Jokes class
 from home_component import *
 import asyncio
@@ -7,11 +8,13 @@ description = 'Modern joke generator'
 
 
 def  navigation_bar():
-    return Nav(
+    return Header(Nav(
         A(
-            Img(src='/assests/logo.svg', alt="jokes generator",width='105',height='24'),href="/"),
+            Img(src='/assets/k.svg', alt="jokes generator",width='105',height='24'),href="/"),
         A("About The Developer", href='/about', cls=f'bg-black text-white py-2 px-4 s-body rounded-[62.5rem] hover:bg-black/80 transition-colors duration-300 px-4 py-1 h-10 {center} justify-center'),
-        cls=f'py-2 px-4 {between} items-center rounded-full w-full max-w-[400px] bg-white/50 backdrop-blur-lg border border-white/20')
+        cls=f'py-2 px-4 {between} items-center rounded-full w-full max-w-[400px] bg-yellow1 backdrop-blur-lg border border-white/20'
+        ),cls=f'fixed top-0 w-full left-0 p-4 {center} justify-center z-50 bg-yellow1'
+                  )
     
     
 
@@ -48,15 +51,14 @@ async def tuple_joke():
     else:
         return(joke["setup"] ,joke["delivery"])
 
-app = FastHTML(hdrs=hdrs, default_hdrs=False,live = True)
+app,rt = fast_app(hdrs=hdrs, default_hdrs=False,live = True)
 
 joke = ()
 
-@app.get("/")
+@rt("/")
 def home():
-    # return navigation_bar(),Title("Joke Generator"),Main(Button("generate joke", hx_post="/genjoke"),
-    #                                     Div(P(listing(joke))))
-    return Div(Img(src="ghra/x.jpg"))
+    return navigation_bar(),Title("Joke Generator")
+
 
 
 @app.post("/genjoke")
