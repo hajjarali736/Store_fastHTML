@@ -1,8 +1,21 @@
 from fasthtml.common import *
 from jokeapi import Jokes # Import the Jokes class
+from home_component import *
 import asyncio
 
 description = 'Modern joke generator'
+
+
+def  navigation_bar():
+    return Nav(
+        A(
+            Img(src='/assests/logo.svg', alt="jokes generator",width='105',height='24'),href="/"),
+        A("About The Developer", href='/about', cls=f'bg-black text-white py-2 px-4 s-body rounded-[62.5rem] hover:bg-black/80 transition-colors duration-300 px-4 py-1 h-10 {center} justify-center'),
+        cls=f'py-2 px-4 {between} items-center rounded-full w-full max-w-[400px] bg-white/50 backdrop-blur-lg border border-white/20')
+    
+    
+
+
 
 hdrs = [
     Meta(charset='UTF-8'),
@@ -47,7 +60,7 @@ joke = ()
 
 @app.get("/")
 def home():
-    return Title("Joke Generator"),Main(Button("generate joke", hx_post="/genjoke"),
+    return navigation_bar(),Title("Joke Generator"),Main(Button("generate joke", hx_post="/genjoke"),
                                         Div(P(listing(joke))))
 
 
