@@ -78,7 +78,8 @@ app,rt = fast_app(live=True, hdrs=hdrs)
 
 @rt("/")
 def home():
-    return Main(nav_bar(),select())
+    # return Main(nav_bar(),select())
+    return Main()
 
 
 
