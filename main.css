@@ -1,3 +1,24 @@
+
+
+/* Font Face Definitions */
+@font-face {
+  font-family: "Geist";
+  src: url("../assets/fonts/geist/GeistVF.woff2") format("woff2"),
+       url("../assets/fonts/geist/GeistVF.woff") format("woff");
+}
+@font-face {
+  font-family: "Geist";
+  src: url("../assets/fonts/geist/Geist-Medium.woff") format("woff"),
+       url("../assets/fonts/geist/Geist-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("../assets/fonts/geist-mono/GeistMonoVF.woff2") format("woff2"),
+       url("../assets/fonts/geist-mono/GeistMonoVF.woff") format("woff");
+}
+
+
 /* Gradient Background Animation */
 main {
   background: linear-gradient(60deg, #ff0000, #ffeb3b, #ff0000, #ffeb3b);
@@ -19,29 +40,12 @@ main {
   }
 }
 
-/* Font Face Definitions */
-@font-face {
-  font-family: "Geist";
-  src: url("../assets/fonts/geist/GeistVF.woff2") format("woff2"),
-       url("../assets/fonts/geist/GeistVF.woff") format("woff");
-}
-@font-face {
-  font-family: "Geist";
-  src: url("../assets/fonts/geist/Geist-Medium.woff") format("woff"),
-       url("../assets/fonts/geist/Geist-Medium.woff2") format("woff2");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Geist Mono";
-  src: url("../assets/fonts/geist-mono/GeistMonoVF.woff2") format("woff2"),
-       url("../assets/fonts/geist-mono/GeistMonoVF.woff") format("woff");
-}
-
 /* Common Styles */
 .joke-card {
   padding: 1.5rem;
+  /* padding-bottom: 1000000px; */
   margin: 1rem;
-  background: linear-gradient(to right, #ff7f7f, #ffd700);
+  /* background: linear-gradient(to right, #ff7f7f, #ffd700); */
   border-radius: 1rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   text-align: center;

@@ -29,7 +29,7 @@ def select():
             Div(
                 P("Programming", style="padding-right: 20px;", cls="option-text"), 
                 CheckboxX(value="Programming", hx_post="/add/programming", cls="custom-checkbox"), 
-                style="display: flex; align-items: center; justify-content: center; padding-right: 20px;"
+                style="display: flex; align -items: center; justify-content: center; padding-right: 20px;"
             ),
             Div(
                 P("dark", style="padding-right: 20px;", cls="option-text"), 
@@ -54,7 +54,7 @@ def select():
        
         id="main-container",  # ID for the big Div
         style="display: flex; justify-content: space-between; width: 100%; background-color: red;"
-    ), joke_card()
+    ),  joke_card()
     
 def joke_card():
     return Div(Div(P('The joke will be appear',id ="first_line",cls="joke-text",),
@@ -78,8 +78,8 @@ app,rt = fast_app(live=True, hdrs=hdrs)
 
 @rt("/")
 def home():
-    # return Main(nav_bar(),select())
-    return Main()
+    return Main(nav_bar(),select())
+    # return Main()
 
 
 
