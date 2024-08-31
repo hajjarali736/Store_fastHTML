@@ -27,33 +27,32 @@ def select():
         # Centered options
         Ul(
             Div(
-                P("Programming", style="padding-right: 20px;", cls="option-text"), 
+                P("Programming", cls="option-text"), 
                 CheckboxX(value="Programming", hx_post="/add/programming", cls="custom-checkbox"), 
-                style="display: flex; align -items: center; justify-content: center; padding-right: 20px;"
+                cls="option-container"
             ),
             Div(
-                P("dark", style="padding-right: 20px;", cls="option-text"), 
+                P("dark", cls="option-text"), 
                 CheckboxX(value="dark", hx_post="/add/dark", cls="custom-checkbox"), 
-                style="display: flex; align-items: center; justify-content: center; padding-right: 20px;"
+                cls="option-container"
             ),
             Div(
-                P("pun", style="padding-right: 20px;", cls="option-text"), 
+                P("pun", cls="option-text"), 
                 CheckboxX(value="pun", hx_post="/add/pun", cls="custom-checkbox"), 
-                style="display: flex; align-items: center; justify-content: center; padding-right: 20px;"
+                cls="option-container"
             ),
             cls="selector",
-            _id="counter",
-            style="display: flex; flex-direction: row; align-items: center; justify-content: center; width: 75%;"
+            _id="counter"
         ),
         # Generate button with an id
         Button(
             "Generate",
             id="generate-btn",
-            hx_post = "/generate",hx_target="#joke-card",hx_swap="outerHTML"
+            hx_post="/generate",
+            hx_target="#joke-card",
+            hx_swap="outerHTML"
         ),
-       
         id="main-container",  # ID for the big Div
-        style="display: flex; justify-content: space-between; width: 100%; background-color: red;"
     ),  joke_card()
     
 def joke_card():
@@ -67,7 +66,7 @@ def joke_card():
 
 hdrs = [ Meta(charset='UTF-8'),
     Meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0'),
-     Link(href='css/main.css', rel='stylesheet'),
+     Link(href='/css/main.css', rel='stylesheet'),
     Link(href='tailwind.css', rel='stylesheet'),
         ]
 

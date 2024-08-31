@@ -25,7 +25,7 @@ body, html {
 main {
   background: linear-gradient(60deg, #231F20, #8E793E, #EAEAEA, #AD974F);
   background-size: 300% 300%;
-  animation: gradientShift 3s ease-in-out infinite;
+  animation: gradientShift 7s ease-in-out infinite;
   padding: 2rem;
   
   /* Hide Scrollbar */
@@ -55,6 +55,7 @@ main::-webkit-scrollbar {
 /* Common Styles */
 .joke-card {
   padding: 1.5rem;
+  position: fixed;
   margin: 1rem;
   background: linear-gradient(to right, #373737, #4D4637);
   border-radius: 1rem;
@@ -62,6 +63,7 @@ main::-webkit-scrollbar {
   text-align: center;
   max-width: 600px;
   color: white;
+  margin-bottom: 25%;
 }
 
 .joke-text {
@@ -77,7 +79,6 @@ main::-webkit-scrollbar {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  margin-top: -14rem; /* Adjust this value as needed */
 }
 
 
@@ -97,6 +98,27 @@ main::-webkit-scrollbar {
   transform: scale(1.05);
 }
 
+/* Main container styling */
+#main-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw; /* Full width of the viewport */
+  margin-left: calc(-50vw + 50%); /* Center and expand to the edges */
+  margin-right: calc(-50vw + 50%);
+  position: relative; /* Necessary for layering */
+  overflow: hidden; /* Hide overflow from pseudo-elements */
+  background: linear-gradient(135deg, #231F20, #8E793E); /* Initial gradient */
+  transition-property: background-color, background-position, background-size; /* Specify properties */
+  transition-duration: 1s; /* Duration of the transition */
+  transition-timing-function: ease; /* Smooth transition */
+}
+
+/* Gradient background on hover */
+#main-container:hover {
+  background: linear-gradient(to right, #8E793E, #231F20); /* Gradient change on hover */
+}
+
+
 /* Title Container Styling */
 #title-container {
   width: 25%;
@@ -108,11 +130,32 @@ main::-webkit-scrollbar {
   align-items: center;
 }
 #choose-text {
-  color: white;
+  color: red;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight:900;
   font-family: 'Geist', sans-serif;
 }
+
+.selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+}
+
+.option-text {
+  padding-right: 20px;
+}
+
+.selector > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+
 
 /* Custom Checkbox Styling */
 .custom-checkbox {
