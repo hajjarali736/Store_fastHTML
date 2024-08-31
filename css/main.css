@@ -1,4 +1,12 @@
 
+body, html {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
 
 /* Font Face Definitions */
 @font-face {
@@ -6,26 +14,29 @@
   src: url("../assets/fonts/geist/GeistVF.woff2") format("woff2"),
        url("../assets/fonts/geist/GeistVF.woff") format("woff");
 }
-@font-face {
-  font-family: "Geist";
-  src: url("../assets/fonts/geist/Geist-Medium.woff") format("woff"),
-       url("../assets/fonts/geist/Geist-Medium.woff2") format("woff2");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Geist Mono";
-  src: url("../assets/fonts/geist-mono/GeistMonoVF.woff2") format("woff2"),
-       url("../assets/fonts/geist-mono/GeistMonoVF.woff") format("woff");
+
+
+.font-details-off {
+  font-feature-settings: "clig" off, "liga" off;
 }
 
 
 /* Gradient Background Animation */
 main {
-  background: linear-gradient(60deg, #ff0000, #ffeb3b, #ff0000, #ffeb3b);
+  background: linear-gradient(60deg, #231F20, #8E793E, #EAEAEA, #AD974F);
   background-size: 300% 300%;
   animation: gradientShift 3s ease-in-out infinite;
   padding: 2rem;
+  
+  /* Hide Scrollbar */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
+
+main::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
 
 /* Gradient Animation */
 @keyframes gradientShift {
@@ -40,12 +51,12 @@ main {
   }
 }
 
+
 /* Common Styles */
 .joke-card {
   padding: 1.5rem;
-  /* padding-bottom: 1000000px; */
   margin: 1rem;
-  /* background: linear-gradient(to right, #ff7f7f, #ffd700); */
+  background: linear-gradient(to right, #373737, #4D4637);
   border-radius: 1rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -54,6 +65,7 @@ main {
 }
 
 .joke-text {
+  color: white;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Geist', sans-serif;
@@ -65,11 +77,13 @@ main {
   align-items: center;
   height: 100vh;
   width: 100vw;
+  margin-top: -14rem; /* Adjust this value as needed */
 }
+
 
 /* Generate Button Styling */
 #generate-btn {
-  background: linear-gradient(to right, #ff7f7f, #ffd700);
+  background: linear-gradient(to right, #231F20, #AD974F);
   color: white;
   font-weight: 500;
   padding: 0.5rem 1.25rem;
@@ -79,7 +93,7 @@ main {
   font-family: 'Geist', sans-serif;
 }
 #generate-btn:hover {
-  background: linear-gradient(to right, #ffd700, #ff7f7f);
+  background: linear-gradient(to right, #AD974F, #231F20);
   transform: scale(1.05);
 }
 
@@ -111,8 +125,8 @@ main {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .custom-checkbox:checked {
-  background-color: #ff4d4d;
-  border-color: #ff4d4d;
+  background-color: #231F20;
+  border-color: #231F20;
 }
 .custom-checkbox:checked::after {
   content: '';
@@ -125,3 +139,49 @@ main {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+
+.nav-bar {
+  width: 100%;
+  left: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 50;
+  background-color: #AD974F; /* Adjusted for 'bg-yellow' */
+}
+
+.nav-content {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(10px); /* 'backdrop-blur-lg' */
+  border-radius: 9999px; /* 'rounded-full' */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* 'border-black/20' */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-content:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* 'hover:bg-white/80' */
+}
+
+.about-link {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 62.5rem;
+  transition: background-color 0.3s ease-in-out;
+  height: 2.5rem; /* 'h-10' */
+}
+
+.about-link:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* 'hover:bg-white/80' */
+  color: #231F20;
+}
+

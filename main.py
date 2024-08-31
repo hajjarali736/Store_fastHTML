@@ -67,12 +67,12 @@ def joke_card():
 
 hdrs = [ Meta(charset='UTF-8'),
     Meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0'),
-     Link(href='main.css', rel='stylesheet'),
+     Link(href='css/main.css', rel='stylesheet'),
     Link(href='tailwind.css', rel='stylesheet'),
         ]
 
 #creating the app
-app,rt = fast_app(live=True, hdrs=hdrs)
+app,rt = fast_app(live=True, hdrs=hdrs,)
 
 
 
