@@ -32,8 +32,8 @@ def select():
                 cls="option-container"
             ),
             Div(
-                P("dark", cls="option-text"), 
-                CheckboxX(value="dark", hx_post="/add/dark", cls="custom-checkbox"), 
+                P("miscellaneous", cls="option-text"), 
+                CheckboxX(value="Misc", hx_post="/add/Misc", cls="custom-checkbox"), 
                 cls="option-container"
             ),
             Div(
@@ -72,15 +72,14 @@ hdrs = [ Meta(charset='UTF-8'),
 
 #creating the app
 app,rt = fast_app(live=True,
-                  hdrs=hdrs,)
+                  hdrs=hdrs,
+                  )
 
 
 
 @rt("/")
 def home():
     return Main(nav_bar(),select())
-    # return Main()
-
 
 
 @app.post("/add/{categorie}")
@@ -103,7 +102,6 @@ def generate():
     joke_card()
     first_line = joke[0]
     second_line = joke[1]
-    print(joke)
     return Div(Div(Ul(ft.Li(f'{first_line}',id ="first_line",cls="joke-text",),
             ft.Li(f'{second_line}',id ="joke-text",cls="joke-text")),
             id = "joke-card",cls="joke-card",), cls="centered-container")
@@ -111,6 +109,29 @@ def generate():
     
 
 
+@rt("/about")
+def about():
+    return Main(
+        Header(
+            Nav(
+                A(Img(src="/assets/k.svg", alt="Joke generator", width='105', height='24'), href="/"),
+                A("Home", href="/", cls='bg-black text-white py-2 px-4 rounded-[62.5rem] hover:bg-white/80 transition-colors duration-300'),
+                cls='py-2 px-4 flex items-center w-full max-w-[400px] backdrop-blur-lg rounded-full border-black/20 hover:bg-white/80 transition-colors duration-300'
+            ),
+            cls='nav'
+        ),
+        Div(
+            H2("About Me", cls="about-title"),
+            Div(
+                P("Hello! I am Ali Zaghlan El Hajjar, a dedicated computer science student at the Lebanese American University with a deep passion for technology and software engineering.", cls="about-text"),
+                P("I am currently working with the FastHTML framework—a new, Python-based tool that's enabling me to build modern and efficient web applications. This joke generator app showcases my commitment to exploring innovative technologies and enhancing my skills.", cls="about-text"),
+                P("Feel free to connect with me on ", A("LinkedIn", href="https://www.linkedin.com/in/allielhajjar/", cls="linkedin-link"), " and explore more about my projects and interests.", cls="about-text"),
+                cls="about-content"
+            ),
+            id="about-container",
+            cls="center-about-container"
+        )
+    )
 
 
 
