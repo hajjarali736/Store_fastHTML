@@ -13,7 +13,7 @@ def nav_bar():
     return Header(Nav(A(Img(src="/assets/k.svg",alt="Joke generator",width='105',height='24'),href="/"),
                   A("About the Developer",hred="/",cls=f'bg-black text-white py-2 px-4 s-body rounded-[62.5rem] hover:bg-white/80 transition-colors duration-300 px-4 py-1 h-10 {center} justify-center',href="/about"),
                   cls=f'py-2 px-4 {between} items-center  w-full max-w-[400px]  backdrop-blur-lg rounded-full border-black/20 hover:bg-white/80 transition-colors duration-300'),
-                  cls=f'w-full left-0 p-4 {center} justify-center z-50 bg-yellow'
+                  cls='nav'
     )
     
     
@@ -71,7 +71,8 @@ hdrs = [ Meta(charset='UTF-8'),
         ]
 
 #creating the app
-app,rt = fast_app(live=True, hdrs=hdrs,)
+app,rt = fast_app(live=True,
+                  hdrs=hdrs,)
 
 
 
