@@ -4,8 +4,9 @@ from fasthtml import ft
 from jokegen import *
 
 
-first_line = joke[0]
-second_line = joke[1]
+
+# Define global variables for joke content for faster response  
+first_line ,second_line =  joke[0], joke[1]
 
 
 def nav_bar():
@@ -89,7 +90,7 @@ def joke_card():
         cls="centered-container",
     )
 
-
+# Initialize the FastHTML application with headers
 hdrs = [
     Meta(charset="UTF-8"),
     Meta(
@@ -97,7 +98,6 @@ hdrs = [
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0",
     ),
     Link(href="/css/main.css", rel="stylesheet"),
-    Link(href="tailwind.css", rel="stylesheet"),
 ]
 
 # creating the app
@@ -106,7 +106,7 @@ app, rt = fast_app(
     hdrs=hdrs,
 )
 
-
+# Define route handlers
 @rt("/")
 def home():
     return Main(nav_bar(), select())
@@ -201,5 +201,5 @@ def about():
         ),
     )
 
-
+# Start the server to listen for requests
 serve()
