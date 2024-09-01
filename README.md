@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the Joke Generator Web App! This application uses FastHTML and custom styling to create a dynamic and interactive web experience for generating jokes based on user-selected categories.
+This project is a dynamic web application built using the FastHTML framework—a new Python-based tool for creating modern, efficient web applications. The goal of this project is to exhaustively explore and discover all parts of FastHTML, testing its capabilities and features to fully understand its potential and limitations.
 
 ## Features
 
