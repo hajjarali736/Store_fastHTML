@@ -7,7 +7,7 @@ from jokegen import  *
 # Define global variables for joke content for faster response
 first_line, second_line = joke[0], joke[1]
 
-
+#defining HTML component
 def nav_bar():
     return Header(
         Nav(
