@@ -115,7 +115,7 @@ def about():
         Header(
             Nav(
                 A(Img(src="/assets/k.svg", alt="Joke generator", width='105', height='24'), href="/"),
-                A("Home", href="/", cls='bg-black text-white py-2 px-4 rounded-[62.5rem] hover:bg-white/80 transition-colors duration-300'),
+                A("Home", href="/", cls='about_home'),
                 cls='py-2 px-4 flex items-center w-full max-w-[400px] backdrop-blur-lg rounded-full border-black/20 hover:bg-white/80 transition-colors duration-300'
             ),
             cls='nav'
