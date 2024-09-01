@@ -18,8 +18,7 @@ def nav_bar():
                 href="/",
             ),
             A("About the Developer", hred="/", cls="about_home", href="/about"),
-            cls=f"py-2 px-4 {
-                between} items-center  w-full max-w-[400px]  backdrop-blur-lg rounded-full border-black/20 hover:bg-white/80 transition-colors duration-300",
+            cls=f"bar",
         ),
         cls="nav",
     )
@@ -66,7 +65,7 @@ def select():
             hx_target="#joke-card",
             hx_swap="outerHTML",
         ),
-        id="main-container",  # ID for the big Div
+        id="select-container",  # ID for the big Div
     ), joke_card()
 
 
@@ -168,7 +167,7 @@ def about():
                     href="/",
                 ),
                 A("Home", href="/", cls="about_home"),
-                cls="py-2 px-4 flex items-center w-full max-w-[400px] backdrop-blur-lg rounded-full border-black/20 hover:bg-white/80 transition-colors duration-300",
+                cls="bar",
             ),
             cls="nav",
         ),
