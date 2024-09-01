@@ -7,7 +7,7 @@ This project is a dynamic web application built using the FastHTML framework—a
 ## Features
 
 - **Dynamic Joke Generation:** Get jokes tailored to your chosen categories.
-- **Responsive Layout:** Adapts to various screen sizes.
+- **Responsive Layout:** Adapts to various screen sizes for optimal user experience..
 - **Interactive UI:** Utilizes Pico CSS for a modern design for a lively user experience.
 
 ## Technologies Used
