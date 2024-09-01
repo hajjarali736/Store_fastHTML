@@ -18,4 +18,3 @@ async def list_joke(categories):
     
 #joke is a list that contain setup and delivery
 joke = asyncio.run(list_joke(categories)) 
-#

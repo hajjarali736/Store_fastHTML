@@ -11,7 +11,7 @@ second_line = joke[1]
 
 def nav_bar():
     return Header(Nav(A(Img(src="/assets/k.svg",alt="Joke generator",width='105',height='24'),href="/"),
-                  A("About the Developer",hred="/",cls=f'bg-black text-white py-2 px-4 s-body rounded-[62.5rem] hover:bg-white/80 transition-colors duration-300 px-4 py-1 h-10 {center} justify-center',href="/about"),
+                  A("About the Developer",hred="/",cls='about_home',href="/about"),
                   cls=f'py-2 px-4 {between} items-center  w-full max-w-[400px]  backdrop-blur-lg rounded-full border-black/20 hover:bg-white/80 transition-colors duration-300'),
                   cls='nav'
     )
@@ -124,8 +124,8 @@ def about():
             H2("About Me", cls="about-title"),
             Div(
                 P("Hello! I am Ali Zaghlan El Hajjar, a dedicated computer science student at the Lebanese American University with a deep passion for technology and software engineering.", cls="about-text"),
-                P("I am currently working with the FastHTML framework—a new, Python-based tool that's enabling me to build modern and efficient web applications. This joke generator app showcases my commitment to exploring innovative technologies and enhancing my skills.", cls="about-text"),
-                P("Feel free to connect with me on ", A("LinkedIn", href="https://www.linkedin.com/in/allielhajjar/", cls="linkedin-link"), " and explore more about my projects and interests.", cls="about-text"),
+                P("I am currently exploring the FastHTML framework—a cutting-edge, Python-based tool designed for building modern, efficient web applications. Through this dynamic web app, I am rigorously testing the framework's capabilities, including its dynamicity and API integration, all while keeping the process simple and effective.", cls="about-text"),
+                P("Feel free to connect with me on ", A("LinkedIn", href="https://www.linkedin.com/in/allielhajjar/", cls="linkedin-link"), " and explore more about my projects and interests.", cls="about-text",),
                 cls="about-content"
             ),
             id="about-container",
