@@ -1,6 +1,6 @@
 # Author: Ali Zaghlan El Hajjar
 # Description: This script uses the JokeAPI to asynchronously fetch a joke from specified categories.
-# The joke is fetched in a "twopart" format, which includes a setup and a delivery. 
+# The joke is fetched in a "twopart" format, which includes a setup and a delivery.
 # Blacklisted categories are excluded from the joke selection.
 
 from jokeapi import Jokes  # Import the Jokes class from the jokeapi module
@@ -15,16 +15,21 @@ first_line = "heheh"
 second_line = "hohoho"
 
 # Define an asynchronous function to list a joke
+
+
 async def list_joke(categories):
     j = await Jokes()  # Initialize the Jokes class asynchronously
     # Fetch a joke based on the specified categories and filters
     joke = await j.get_joke(
         category=categories,  # List of joke categories to include
-        joke_type="twopart",  # Specify the joke type as 'twopart' (setup and delivery)
-        blacklist=['nsfw', 'religious', 'political', 'racist', 'sexist']  # Blacklist categories to exclude
-    ) 
+        # Specify the joke type as 'twopart' (setup and delivery)
+        joke_type="twopart",
+        blacklist=['nsfw', 'religious', 'political', 'racist',
+                   'sexist']  # Blacklist categories to exclude
+    )
     # Return the joke setup and delivery as a list
     return [joke["setup"], joke["delivery"]]
 
 # Run the asynchronous function and get the joke
-joke = asyncio.run(list_joke(categories))  # 'joke' will be a list containing setup and delivery
+# 'joke' will be a list containing setup and delivery
+joke = asyncio.run(list_joke(categories))
