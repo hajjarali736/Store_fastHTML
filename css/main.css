@@ -5,7 +5,7 @@ body, html {
   margin: 0;
   padding: 0;
 }
-
+  
 
 
 /* Font Face Definitions */
@@ -91,13 +91,52 @@ main::-webkit-scrollbar {
   font-family: 'Geist', sans-serif;
 }
 
+/* Floating Effect */
+@keyframes floatingEffect {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.02) translateY(-5px); /* Slightly larger scale and move up */
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Shake Effect */
+@keyframes shakeEffect {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
+  animation: floatingEffect 4s ease-in-out infinite; /* Faster floating effect */
 }
+
+/* Add shake effect dynamically */
+.centered-container.shake {
+  animation: shakeEffect 0.5s ease-out;
+}
+
 
 
 /* Generate Button Styling */
@@ -246,14 +285,34 @@ main::-webkit-scrollbar {
 
 
 
+@keyframes slideIn {
+  0% {
+    transform: translateY(30px) scale(0.9); /* Start below and slightly scaled down */
+    opacity: 0; /* Start as invisible */
+  }
+  50% {
+    transform: translateY(15px) scale(1.02); /* Intermediate position with a slight scale up */
+    opacity: 0.5; /* Partially visible */
+  }
+  100% {
+    transform: translateY(0) scale(1); /* End at final position with normal scale */
+    opacity: 1; /* Fully visible */
+  }
+}
+
 #about-container {
   position: relative; /* Ensure positioning context for child elements */
   padding: 2rem;
-  background-color: #f4f4f4;
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center; /* Center content horizontally */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  animation: slideIn 0.8s ease-out; /* Apply animation */
 }
+
+
 
 /* About title */
 .about-title {
@@ -273,8 +332,9 @@ main::-webkit-scrollbar {
 }
 
 .about-text {
-  font-size: 1.2rem;
-  color: #666;
+  color: black;
+  font-family: "Geist";
+  font-size: 1.6vw;
   line-height: 1.5;
 }
 
@@ -309,5 +369,7 @@ main::-webkit-scrollbar {
 }
 
 .about_home:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
 }
+
+

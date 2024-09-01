@@ -58,15 +58,13 @@ def select():
 def joke_card():
     return Div(Div(P('The joke will be appear',id ="first_line",cls="joke-text",),
                P('Here',id ="joke-text",cls="joke-text",hx_target="#second_line",),
-               id = "joke-card",cls="joke-card",),cls="centered-container")
+               id = "joke-card",cls="joke-card",),cls="centered-container",)
     
-
-
 
 
 hdrs = [ Meta(charset='UTF-8'),
     Meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0'),
-     Link(href='main.css', rel='stylesheet'),
+     Link(href='/css/main.css', rel='stylesheet'),
     Link(href='tailwind.css', rel='stylesheet'),
         ]
 
@@ -123,9 +121,10 @@ def about():
         Div(
             H2("About Me", cls="about-title"),
             Div(
-                P("Hello! I am Ali Zaghlan El Hajjar, a dedicated computer science student at the Lebanese American University with a deep passion for technology and software engineering.", cls="about-text"),
-                P("I am currently exploring the FastHTML framework—a cutting-edge, Python-based tool designed for building modern, efficient web applications. Through this dynamic web app, I am rigorously testing the framework's capabilities, including its dynamicity and API integration, all while keeping the process simple and effective.", cls="about-text"),
-                P("Feel free to connect with me on ", A("LinkedIn", href="https://www.linkedin.com/in/allielhajjar/", cls="linkedin-link"), " and explore more about my projects and interests.", cls="about-text",),
+                P("Hello! I am Ali Zaghlan El Hajjar, a dedicated computer science student at the Lebanese American University with a deep passion for technology and software engineering. 👨🏽‍💻", cls="about-text"),
+                P("I am currently exploring the FastHTML framework—a cutting-edge, Python-based tool designed for building modern, efficient web applications. Through this dynamic web app, I am rigorously testing the framework's capabilities, including its dynamicity and API integration, all while keeping the process simple and effective. 🚀✨",
+                  cls="about-text",style="margin-top: 3rem;"),
+                P("Feel free to connect with me on ", A("LinkedIn", href="https://www.linkedin.com/in/allielhajjar/", cls="linkedin-link"), " and explore more about my projects and interests.", cls="about-text",style="margin-top: 3rem;"),
                 cls="about-content"
             ),
             id="about-container",
