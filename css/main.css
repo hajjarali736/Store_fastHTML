@@ -1,81 +1,83 @@
-
-body, html {
+body,
+html {
   overflow: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
 }
-  
-
 
 /* Font Face Definitions */
 @font-face {
   font-family: "Geist";
   src: url("../assets/fonts/geist/GeistVF.woff2") format("woff2"),
-       url("../assets/fonts/geist/GeistVF.woff") format("woff");
+    url("../assets/fonts/geist/GeistVF.woff") format("woff");
 }
-
-
 
 .nav {
   width: 100vw;
   left: 0;
-  padding: 1rem; /* Equivalent to p-4 */
+  padding: 1rem;
+  /* Equivalent to p-4 */
   display: flex;
-  align-items: center; /* Equivalent to items-center */
-  justify-content: center; /* Equivalent to justify-center */
-  z-index: 50; /* Equivalent to z-50 */
-  margin-left: calc(-50vw + 50%); 
+  align-items: center;
+  /* Equivalent to items-center */
+  justify-content: center;
+  /* Equivalent to justify-center */
+  z-index: 50;
+  /* Equivalent to z-50 */
+  margin-left: calc(-50vw + 50%);
   margin-top: -1.56vw;
   margin-right: calc(-50vw + 50%);
-  background: linear-gradient(135deg, #231F20, #8E793E); /* Initial gradient */
+  background: linear-gradient(135deg, #231f20, #8e793e);
+  /* Initial gradient */
   overflow: hidden;
-  background-color:#8E793E; 
+  background-color: #8e793e;
 }
-
 
 .font-details-off {
   font-feature-settings: "clig" off, "liga" off;
 }
 
-
 /* Gradient Background Animation */
 main {
-  background: linear-gradient(60deg, #231F20, #8E793E, #EAEAEA, #AD974F);
+  background: linear-gradient(60deg, #231f20, #8e793e, #eaeaea, #ad974f);
   background-size: 300% 300%;
   animation: gradientShift 7s ease-in-out infinite;
   padding: 2rem;
-  
+
   /* Hide Scrollbar */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 main::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  display: none;
+  /* Chrome, Safari, and Opera */
 }
-
 
 /* Gradient Animation */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
-
 
 /* Common Styles */
 .joke-card {
   padding: 1.5rem;
   position: fixed;
   margin: 1rem;
-  background: linear-gradient(to right, #373737, #4D4637);
+  background: linear-gradient(to right, #373737, #4d4637);
   border-radius: 1rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -88,7 +90,7 @@ main::-webkit-scrollbar {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 /* Floating Effect */
@@ -96,9 +98,12 @@ main::-webkit-scrollbar {
   0% {
     transform: scale(1) translateY(0);
   }
+
   50% {
-    transform: scale(1.02) translateY(-5px); /* Slightly larger scale and move up */
+    transform: scale(1.02) translateY(-5px);
+    /* Slightly larger scale and move up */
   }
+
   100% {
     transform: scale(1) translateY(0);
   }
@@ -109,15 +114,19 @@ main::-webkit-scrollbar {
   0% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-5px);
   }
+
   50% {
     transform: translateX(5px);
   }
+
   75% {
     transform: translateX(-5px);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -129,15 +138,14 @@ main::-webkit-scrollbar {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  animation: floatingEffect 4s ease-in-out infinite; /* Faster floating effect */
+  animation: floatingEffect 4s ease-in-out infinite;
+  /* Faster floating effect */
 }
 
 /* Add shake effect dynamically */
 .centered-container.shake {
   animation: shakeEffect 0.5s ease-out;
 }
-
-
 
 /* Generate Button Styling */
 #generate-btn {
@@ -147,10 +155,11 @@ main::-webkit-scrollbar {
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  font-family: 'Geist', sans-serif;
-  border: none; 
+  font-family: "Geist", sans-serif;
+  border: none;
   background-color: transparent;
-  backdrop-filter: blur(8px); /* Applies a blur effect to the background */
+  backdrop-filter: blur(8px);
+  /* Applies a blur effect to the background */
 }
 
 #generate-btn:hover {
@@ -159,29 +168,34 @@ main::-webkit-scrollbar {
   transform: scaleX(1.15);
 }
 
-
-
-
 /* Main container styling */
 #main-container {
   display: flex;
   justify-content: space-between;
-  width: 100vw; /* Full width of the viewport */
-  margin-left: calc(-50vw + 50%); /* Center and expand to the edges */
+  width: 100vw;
+  /* Full width of the viewport */
+  margin-left: calc(-50vw + 50%);
+  /* Center and expand to the edges */
   margin-right: calc(-50vw + 50%);
-  position: relative; /* Necessary for layering */
-  overflow: hidden; /* Hide overflow from pseudo-elements */
-  background: linear-gradient(135deg, #231F20, #8E793E); /* Initial gradient */
-  transition-property: background-color, background-position, background-size; /* Specify properties */
-  transition-duration: 1s; /* Duration of the transition */
-  transition-timing-function: ease; /* Smooth transition */
+  position: relative;
+  /* Necessary for layering */
+  overflow: hidden;
+  /* Hide overflow from pseudo-elements */
+  background: linear-gradient(135deg, #231f20, #8e793e);
+  /* Initial gradient */
+  transition-property: background-color, background-position, background-size;
+  /* Specify properties */
+  transition-duration: 1s;
+  /* Duration of the transition */
+  transition-timing-function: ease;
+  /* Smooth transition */
 }
 
 /* Gradient background on hover */
 #main-container:hover {
-  background: linear-gradient(to right, #8E793E, #231F20); /* Gradient change on hover */
+  background: linear-gradient(to right, #8e793e, #231f20);
+  /* Gradient change on hover */
 }
-
 
 /* Title Container Styling */
 #title-container {
@@ -193,10 +207,11 @@ main::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
 }
+
 #choose-text {
   color: white;
   font-size: 1.5rem;
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 .selector {
@@ -209,7 +224,7 @@ main::-webkit-scrollbar {
 
 .option-text {
   font-size: larger;
-  font-family: 'Geist';
+  font-family: "Geist";
   color: white;
   padding-right: 20px;
 }
@@ -221,8 +236,6 @@ main::-webkit-scrollbar {
   padding-right: 20px;
 }
 
-
-
 /* Custom Checkbox Styling */
 .custom-checkbox {
   appearance: none;
@@ -233,9 +246,10 @@ main::-webkit-scrollbar {
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+
 .custom-checkbox:checked {
-  background-color: #231F20;
-  border-color: #231F20;
+  background-color: #231f20;
+  border-color: #231f20;
 }
 
 .nav-bar {
@@ -246,7 +260,8 @@ main::-webkit-scrollbar {
   justify-content: center;
   position: relative;
   z-index: 50;
-  background-color: #AD974F; /* Adjusted for 'bg-yellow' */
+  background-color: #ad974f;
+  /* Adjusted for 'bg-yellow' */
 }
 
 .nav-content {
@@ -256,14 +271,18 @@ main::-webkit-scrollbar {
   align-items: center;
   width: 100%;
   max-width: 400px;
-  backdrop-filter: blur(10px); /* 'backdrop-blur-lg' */
-  border-radius: 9999px; /* 'rounded-full' */
-  border: 1px solid rgba(0, 0, 0, 0.2); /* 'border-black/20' */
+  backdrop-filter: blur(10px);
+  /* 'backdrop-blur-lg' */
+  border-radius: 9999px;
+  /* 'rounded-full' */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* 'border-black/20' */
   transition: background-color 0.3s ease-in-out;
 }
 
 .nav-content:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* 'hover:bg-white/80' */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* 'hover:bg-white/80' */
 }
 
 .about-link {
@@ -275,54 +294,65 @@ main::-webkit-scrollbar {
   align-items: center;
   border-radius: 62.5rem;
   transition: background-color 0.3s ease-in-out;
-  height: 2.5rem; /* 'h-10' */
+  height: 2.5rem;
+  /* 'h-10' */
 }
 
 .about-link:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* 'hover:bg-white/80' */
-  color: #231F20;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* 'hover:bg-white/80' */
+  color: #231f20;
 }
-
-
 
 @keyframes slideIn {
   0% {
-    transform: translateY(30px) scale(0.9); /* Start below and slightly scaled down */
-    opacity: 0; /* Start as invisible */
+    transform: translateY(30px) scale(0.9);
+    /* Start below and slightly scaled down */
+    opacity: 0;
+    /* Start as invisible */
   }
+
   50% {
-    transform: translateY(15px) scale(1.02); /* Intermediate position with a slight scale up */
-    opacity: 0.5; /* Partially visible */
+    transform: translateY(15px) scale(1.02);
+    /* Intermediate position with a slight scale up */
+    opacity: 0.5;
+    /* Partially visible */
   }
+
   100% {
-    transform: translateY(0) scale(1); /* End at final position with normal scale */
-    opacity: 1; /* Fully visible */
+    transform: translateY(0) scale(1);
+    /* End at final position with normal scale */
+    opacity: 1;
+    /* Fully visible */
   }
 }
 
 #about-container {
-  position: relative; /* Ensure positioning context for child elements */
+  position: relative;
+  /* Ensure positioning context for child elements */
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+  background-color: rgba(255, 255, 255, 0.3);
+  /* Transparent background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Center content horizontally */
-  backdrop-filter: blur(10px); /* Apply blur effect */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  animation: slideIn 0.8s ease-out; /* Apply animation */
+  text-align: center;
+  /* Center content horizontally */
+  backdrop-filter: blur(10px);
+  /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari support */
+  animation: slideIn 0.8s ease-out;
+  /* Apply animation */
 }
-
-
 
 /* About title */
 .about-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 1rem; /* Space below the title */
+  margin-bottom: 1rem;
+  /* Space below the title */
 }
-
-
 
 .about-content {
   display: flex;
@@ -352,9 +382,9 @@ main::-webkit-scrollbar {
 .center-about-container {
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Center vertically if needed */
+  min-height: 100vh;
+  /* Center vertically if needed */
 }
-
 
 .about_home {
   background-color: black;
@@ -371,5 +401,3 @@ main::-webkit-scrollbar {
 .about_home:hover {
   transform: scale(1.05);
 }
-
-
