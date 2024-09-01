@@ -1,12 +1,11 @@
 from fasthtml.common import *
 from home_component import *
 from fasthtml import ft
-from jokegen import *
+from jokegen import  *
 
 
-
-# Define global variables for joke content for faster response  
-first_line ,second_line =  joke[0], joke[1]
+# Define global variables for joke content for faster response
+first_line, second_line = joke[0], joke[1]
 
 
 def nav_bar():
@@ -90,6 +89,7 @@ def joke_card():
         cls="centered-container",
     )
 
+
 # Initialize the FastHTML application with headers
 hdrs = [
     Meta(charset="UTF-8"),
@@ -107,6 +107,8 @@ app, rt = fast_app(
 )
 
 # Define route handlers
+
+
 @rt("/")
 def home():
     return Main(nav_bar(), select())
@@ -200,6 +202,7 @@ def about():
             cls="center-about-container",
         ),
     )
+
 
 # Start the server to listen for requests
 serve()
