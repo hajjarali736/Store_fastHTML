@@ -1,3 +1,9 @@
+# Author: Ali Zaghlan El Hajjar
+# Description: This script defines a web application using FastHTML for generating and displaying jokes.
+# It includes components for navigation, joke selection, and joke display. The application uses asynchronous
+# calls to fetch jokes based on selected categories. The "about" page provides information about the developer
+# and their work with the FastHTML framework.
+
 from fasthtml.common import *
 from home_component import *
 from fasthtml import ft
