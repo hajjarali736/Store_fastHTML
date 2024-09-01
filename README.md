@@ -1,4 +1,3 @@
-```markdown
 # Joke Generator Web App
 
 ## Overview
