@@ -87,13 +87,12 @@ Joke Generation: When a user requests a joke, the application sends a POST reque
        )
    ```
 
-How FastHTML Helped
+## How FastHTML Helped
 FastHTML played a crucial role in the development of this application by simplifying HTML structure creation and enhancing code maintainability. Here’s how FastHTML contributed:
 
 Simplified HTML Structure: FastHTML allows for a more Pythonic approach to defining HTML structures. This makes it easier to manage and generate complex HTML layouts directly from Python code.
 
 ```python
-Copy code
 def nav_bar():
 return Header(
 Nav(
@@ -112,7 +111,6 @@ cls="nav",
 Dynamic Content Rendering: FastHTML’s integration with asynchronous functions facilitates dynamic content updates without the need for traditional page reloads. This results in a more responsive user experience.
 
 ```python
-Copy code
 def generate():
 joke = asyncio.run(list_joke(categories))
 return Div(
